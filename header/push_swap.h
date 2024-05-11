@@ -3,9 +3,9 @@
 
 typedef struct s_node
 {
-	int				value;
-	int				index;
-	struct s_node	*next;
+	int				val;
+	int				ind;
+	struct s_node	*nxt;
 }				t_node;
 
 #endif
