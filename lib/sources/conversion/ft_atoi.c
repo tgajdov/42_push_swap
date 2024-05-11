@@ -31,8 +31,8 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + (str[i] - 48) * pair;
+		nb = nb * 10 + (str[i] - 48);
 		i++;
 	}
-	return (nb);
+	return (nb * pair);
 }

@@ -1,4 +1,4 @@
-#include"../../includes/libft.h"
+#include"../header/push_swap.h"
 
 void	ft_free_array(char **array)
 {

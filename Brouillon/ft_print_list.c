@@ -1,8 +1,8 @@
 #include<../header/push_swap.h>
 
-void	ft_print_list(t_node *head)
+void	ft_print_list(t_stack_node *head)
 {
-	t_node *current;
+	t_stack_node *current;
 
 	current = head;
 	while(current != NULL)

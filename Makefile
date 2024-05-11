@@ -17,7 +17,7 @@ INCLUDES = #-I $(LIBFT_PATH)
 RM = rm -rf
 MKDIR = mkdir -p
 
-LIBFT_PATH = /Users/toma/Desktop/42/Mes_projets/42_so_long/lib/
+LIBFT_PATH = ./lib/
 
 # Compiler flags to include library headers
 #INCLUDES = -I $(LIBFT_PATH) -I $(MLX_PATH)
