@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 
 	str_i = 0;
-	tab = ft_calloc((ft_cw(s, c)) + 1, sizeof(char *));
+	tab = malloc(sizeof(char *) * (ft_cw(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	i = 0;
@@ -67,11 +67,16 @@ char	**ft_split(char const *s, char c)
 		if (str_i < ft_cw(s, c))
 			tab[str_i++] = ft_substr(s, start, len);
 		else
-			tab[str_i] = 0;
+			tab[str_i] = NULL;
 	}
 	return (tab);
 }
 
 /*Je dois modifier la foction pour que lorsqu'une allocation
  * de ft_substr echoue, toute la ft_split doit arreter,
- * free les espaces deja allouer et retourner 0*/
+ * free les espaces deja allouer et retourner 0
+ * 
+ * if (!tab[str_i])
+				ft_free_array(tab);
+			if (!tab[str_i])
+				return (tab);*/

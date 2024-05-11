@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		ptr = malloc((strlen + 1) * sizeof(char));
 	if (!ptr)
-		return (0);
+		return (NULL);
 	if (start < (size_t)ft_strlen(s))
 	{
 		while (strlen--)
@@ -44,4 +44,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
  * car la il y a trop de memoire allouee
  * exemple si je dois faire une copie de 50 char
  * au char 950 de ma string, je lui alloue quand meme
- * 1000 emplacement*/
+ * 1000 emplacement
+ * 
+ * Après re-check pas sur de mon commentaire precedent*/

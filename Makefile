@@ -9,6 +9,7 @@
 NAME = push_swap
 CC = gcc
 CCFLAGS = -Wall -Wextra -Werror
+LEAKS = leaks -atExit --
 LDFLAGS = -L$(LIBFT_PATH) -lft
 #Je n'ai pas encore compris a quoi sert le include vu que ça fonctionne sans
 INCLUDES = #-I $(LIBFT_PATH)
@@ -54,6 +55,7 @@ libft:
 	@make -C lib
 
 checkleaks:
+	@${LEAKS} ./${NAME}
 #rajouter une regle ici pour hecker ces leaks
 
 clean:
