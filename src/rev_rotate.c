@@ -2,7 +2,16 @@
 
 static void	rev_rotate(t_stack_node **stack)
 {
-	return ;
+	t_stack_node	*last_node;
+	
+	if (!*stack || !(*stack)->nxt)
+		return ;
+	last_node = find_last_node(*stack);
+	last_node->prev->nxt = NULL;
+	last_node->nxt = *stack;
+	last_node->prev = NULL;
+	*stack = last_node;
+	last_node->nxt->prev = last_node;
 }
 
 void	rra(t_stack_node **a, bool print)

@@ -2,7 +2,26 @@
 
 static void	push(t_stack_node **dst, t_stack_node **src)
 {
-	return ;
+	t_stack_node *push_node;
+
+	if(!src)
+		return ;
+	push_node = *src;
+	*src = (*src)->nxt;
+	if (*src)
+		(*src)->prev = NULL;
+	push_node->prev = NULL;
+	if (!*dst)
+	{
+		*dst = push_node;
+		push_node->nxt = NULL;
+	}
+	else
+	{
+		push_node->nxt = *dst;
+		push_node->nxt->prev = push_node;
+		*dst = push_node;
+	}
 }
 
 void	pa(t_stack_node **a, t_stack_node **b, bool print)

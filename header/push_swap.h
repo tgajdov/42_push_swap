@@ -43,21 +43,18 @@ void			stack_init(t_stack_node **a, char **av);
 
 /* -------◊	Stack utils			◊------- */
 t_stack_node	*find_last_node(t_stack_node *stack);
+t_stack_node	*find_max(t_stack_node *stack);
 int				lstsize(t_stack_node *lst);
 
 /* -------◊	Commands			◊------- */
-static void		push(t_stack_node **dst, t_stack_node **src);
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
 void			pb(t_stack_node **b, t_stack_node **a, bool print);
-static void		swap(t_stack_node **head);
 void			sa(t_stack_node	**a, bool print);
 void			sb(t_stack_node **b, bool print);
 void			ss(t_stack_node **a, t_stack_node **b, bool print);
-static void		rotate(t_stack_node **stack);
 void			ra(t_stack_node **a, bool print);
 void			rb(t_stack_node **b, bool print);
 void			rr(t_stack_node **a, t_stack_node **b, bool print);
-static void		rev_rotate(t_stack_node **stack);
 void			rra(t_stack_node **a, bool print);
 void			rrb(t_stack_node **b, bool print);
 void			rrr(t_stack_node **a, t_stack_node **b, bool print);

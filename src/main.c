@@ -20,15 +20,14 @@ int	main(int ac, char **av)
 		stack_init(&a, av + 1);
 	if (!stack_sorted(a))
 	{
-		printf("my list's size: %d\n", lstsize(a));
-		// if (ft_lstsize(a) == 2)
-		// 	sa(&a, false);
-		// else if (ft_lstsize(a)  == 3)
-		// 	sort_three(&a);
-		// else
+		if (lstsize(a) == 2)
+			sa(&a, false);
+		else if (lstsize(a)  == 3)
+			sort_three(&a);
+		//else
 		// 	sort_stack(&a, &b);
 	}
 	// free_stack(&a);
-	//ft_print_list(a);
+	ft_print_list(a);
 	exit (0);
 }
