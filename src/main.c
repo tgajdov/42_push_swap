@@ -28,6 +28,6 @@ int	main(int ac, char **av)
 		// 	sort_stack(&a, &b);
 	}
 	// free_stack(&a);
-	ft_print_list(a);
+	//ft_print_list(a);
 	exit (0);
 }

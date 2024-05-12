@@ -36,6 +36,12 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 /* -------◊	Handle errors		◊------- */
+int				error_syntax(char *str_n);
+int				error_duplicate(t_stack_node *a, int n);
+void			free_stack(t_stack_node **stack);
+void			free_errors(t_stack_node **a);
+
+
 /* -------◊	Stack initiation	◊------- */
 void			stack_init(t_stack_node **a, char **av);
 
