@@ -68,6 +68,7 @@ void			rrr(t_stack_node **a, t_stack_node **b, bool print);
 /* -------◊	Algo				◊------- */
 bool			stack_sorted(t_stack_node *stack);
 void			sort_three(t_stack_node **a);
+void			sort_stack(t_stack_node **a, t_stack_node **b);
 
 /* -------◊	Rests				◊------- */
 void			ft_print_list(t_stack_node *head);
