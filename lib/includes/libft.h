@@ -97,13 +97,13 @@ void	ft_putnbr_fd(int n, int fd);
 char	*get_next_line(int fd);
 
 /* -------◊	PRINTF	◊------- */
-int	ft_printf(const char *format, ...);
-int	ft_printchar(char c, int len);
-int	ft_printstr(char *str, int len);
-int	ft_printnbr(int nb, int len);
-int	ft_print_u_nbr(size_t nb, int len);
-int	ft_print_ptr_add(size_t add, int len);
-int	ft_print_xs(unsigned int add, int len);
-int	ft_print_xl(unsigned int add, int len);
+int		ft_printf(const char *format, ...);
+int		ft_printchar(char c, int len);
+int		ft_printstr(char *str, int len);
+int		ft_printnbr(int nb, int len);
+int		ft_print_u_nbr(size_t nb, int len);
+int		ft_print_ptr_add(size_t add, int len);
+int		ft_print_xs(unsigned int add, int len);
+int		ft_print_xl(unsigned int add, int len);
 
 #endif

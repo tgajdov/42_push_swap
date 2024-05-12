@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re libft fcleanlib checkleaks
+.PHONY: all clean fclean re libft fcleanlib testleaks test
 
 #-L./Libft	: indique ou se trv la lib qu'il faut ajouter, le path
 #-lft		: indique le nom de la lib, mais sans le préfixe lib-, le name
@@ -8,7 +8,7 @@
 
 NAME = push_swap
 CC = gcc
-CCFLAGS = -Wall -Wextra -Werror
+#CCFLAGS = -Wall -Wextra -Werror
 LEAKS = leaks -atExit --
 LDFLAGS = -L$(LIBFT_PATH) -lft
 #Je n'ai pas encore compris a quoi sert le include vu que ça fonctionne sans
@@ -18,14 +18,21 @@ RM = rm -rf
 MKDIR = mkdir -p
 
 LIBFT_PATH = ./lib/
+SRC_DIR = src
+OBJ_DIR = bin
+BIN_DIR = bin
 
 # Compiler flags to include library headers
 #INCLUDES = -I $(LIBFT_PATH) -I $(MLX_PATH)
 # Compiler flags to link to libraries
 #PATH_LIBS = -L$(LIBFT_PATH) -L$(MLX_PATH)
 
-SRCS = $(wildcard src/*.c)
-OBJS = $(SRCS:%.c=%.o)
+SRCS = $(wildcard ${SRC_DIR}/*.c)
+OBJS = $(SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o)
+
+#NUMBERS = 5121 7286 -6976 8639 -6938 -1573 3644 -5902 -5994 -6738 8458 -7007 6322 479 5496 -183 -8481 9886 3667 3005
+#NUMBERS = -9989 -6091 -6085 -6061 -4914 -4225 -3569 -2023 -1899 -1760 -1203 -413 2357 4662 4872 4956 5236 5839 6853 7295
+NUMBERS = -6 5 -7 1 0 7 -4 3 -2 6
 
 # Colors
 DEF_COLOR = \033[0;39m
@@ -47,20 +54,28 @@ $(NAME): $(OBJS) libft
 	@$(CC) ${CCFLAGS} $(OBJS) $(INCLUDES) $(LDFLAGS) -o $(NAME)
 	@echo "./$@ done"
 
-%.o: %.c
+${OBJ_DIR}/%.o: ${SRC_DIR}/%.c
+	@${MKDIR} ${BIN_DIR}
 	@${CC} ${CCFLAGS} $(INCLUDES) -c $< -o $@
 
 libft:
 	@echo "Creating $@"
 	@make -C lib
 
-checkleaks:
-	@${LEAKS} ./${NAME}
+test:
+	@echo "Testing ${NAME}"
+	@sleep 1
+	@./${NAME} ${NUMBERS}
+
+testleaks:
+	@echo "Testing Leaks in ${NAME}"
+	@sleep 1
+	@${LEAKS} ./${NAME} ${NUMBERS}
 #rajouter une regle ici pour hecker ces leaks
 
 clean:
 	@echo "Cleaning up ${NAME}"
-	@${RM} ${OBJS}
+	@${RM} ${OBJ_DIR}
 	@echo "$(BLUE) ${NAME} Object files cleaned!$(DEF_COLOR)"
 
 fcleanlib:

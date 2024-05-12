@@ -14,19 +14,21 @@ int	main(int ac, char **av)
 	{
 		av = ft_split(av[1], ' ');
 	 	stack_init(&a, av);
+		ft_free_array(av);
 	}
 	else
 		stack_init(&a, av + 1);
-	ft_print_list(&a);
-/* 	if (!stack_sorted(a))
+	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a)  == 3)
-			sort_three(&a);
-		else
-			sort_stack(&a, &b);
+		printf("my list's size: %d\n", lstsize(a));
+		// if (ft_lstsize(a) == 2)
+		// 	sa(&a, false);
+		// else if (ft_lstsize(a)  == 3)
+		// 	sort_three(&a);
+		// else
+		// 	sort_stack(&a, &b);
 	}
-	free_stack(&a); */
-	return (0);
+	// free_stack(&a);
+	//ft_print_list(a);
+	exit (0);
 }
