@@ -24,10 +24,9 @@ int	main(int ac, char **av)
 			sa(&a, false);
 		else if (lstsize(a)  == 3)
 			sort_three(&a);
-		//else
-		// 	sort_stack(&a, &b);
+		else
+		 	sort_stack(&a, &b);
 	}
-	// free_stack(&a);
-	//ft_print_list(a);
+	free_stack(&a);
 	exit (0);
 }
