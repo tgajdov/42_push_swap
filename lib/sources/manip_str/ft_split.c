@@ -72,6 +72,7 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
+//printf("size of str:%zu\nmy i:%zu\nmy start:%zu\nmy str index:%zu\n\n", ft_strlen(s), i, start, str_i);
 /*Je dois modifier la foction pour que lorsqu'une allocation
  * de ft_substr echoue, toute la ft_split doit arreter,
  * free les espaces deja allouer et retourner 0

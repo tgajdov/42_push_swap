@@ -58,9 +58,14 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void	free_errors(t_stack_node **a)
+void	free_errors(t_stack_node **a, int n)
 {
 	free_stack(a);
-	ft_printf("Error in push_swap, check your ARG\n");
+	if (n == 10)
+		ft_printf("Error, at least one arg is not a number!\n");
+	else if (n == 11)
+		ft_printf("Error, at least one number is not an INT\n");
+	else if (n == 12)
+		ft_printf("Error, you have a duplicate\n");
 	exit (1);
 }
