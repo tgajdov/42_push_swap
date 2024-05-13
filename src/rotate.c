@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgajdov <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/13 19:47:23 by tgajdov           #+#    #+#             */
+/*   Updated: 2024/05/13 19:47:24 by tgajdov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../header/push_swap.h"
 
 static void	rotate(t_stack_node **stack)
 {
 	t_stack_node	*last_node;
-	
+
 	if (!*stack || !(*stack)->nxt)
 		return ;
 	last_node = find_last_node(*stack);

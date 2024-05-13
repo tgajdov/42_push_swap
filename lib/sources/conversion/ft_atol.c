@@ -1,9 +1,9 @@
 #include "../../includes/libft.h"
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	int	i;
-	int	pair;
+	int		i;
+	int		pair;
 	long	nb;
 
 	i = 0;

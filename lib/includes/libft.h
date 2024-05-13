@@ -62,7 +62,7 @@ void	ft_print_array(char **array);
 /* -------◊		FUNCTIONS TO CONVERSION/STRINGS FOR INTEGERS	◊------- */
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
-int		ft_atol(const char *str);
+long	ft_atol(const char *str);
 
 /* -------◊		FUNCTIONS TO MANIPULATE MEMORY	◊------- */
 void	ft_bzero(void *s, size_t n);

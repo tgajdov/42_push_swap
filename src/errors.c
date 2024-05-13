@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgajdov <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/13 19:43:06 by tgajdov           #+#    #+#             */
+/*   Updated: 2024/05/13 19:45:59 by tgajdov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../header/push_swap.h"
 
 int	error_syntax(char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
 		return (1);
-	if ((*str_n == '+' || *str_n == '-') && !(str_n[1] >= '0' && str_n[1] <= '9'))
+	if ((*str_n == '+' || *str_n == '-')
+		&& !(str_n[1] >= '0' && str_n[1] <= '9'))
 		return (1);
 	while (*++str_n)
 	{
@@ -21,7 +34,7 @@ int	error_duplicate(t_stack_node *a, int n)
 	while (a)
 	{
 		if (a->val == n)
-			return(1);
+			return (1);
 		a = a->nxt;
 	}
 	return (0);
@@ -48,6 +61,6 @@ void	free_stack(t_stack_node **stack)
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	ft_printf("Error\n");
+	ft_printf("Error in push_swap, check your ARG\n");
 	exit (1);
 }

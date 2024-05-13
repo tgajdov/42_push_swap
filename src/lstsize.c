@@ -14,7 +14,7 @@
 
 int	lstsize(t_stack_node *lst)
 {
-	int		i;
+	int				i;
 	t_stack_node	*copie_lst;
 
 	copie_lst = lst;

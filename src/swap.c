@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgajdov <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/13 19:48:03 by tgajdov           #+#    #+#             */
+/*   Updated: 2024/05/13 19:48:04 by tgajdov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../header/push_swap.h"
 
 static void	swap(t_stack_node **head)
@@ -11,7 +23,7 @@ static void	swap(t_stack_node **head)
 		(*head)->nxt->prev = (*head)->prev;
 	(*head)->nxt = (*head)->prev;
 	(*head)->prev = NULL;
-	return;
+	return ;
 }
 
 void	sa(t_stack_node	**a, bool print)

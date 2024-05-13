@@ -8,7 +8,7 @@
 
 NAME = push_swap
 CC = gcc
-#CCFLAGS = -Wall -Wextra -Werror
+CCFLAGS = -Wall -Wextra -Werror
 LEAKS = leaks -atExit --
 LDFLAGS = -L$(LIBFT_PATH) -lft
 #Je n'ai pas encore compris a quoi sert le include vu que ça fonctionne sans
@@ -69,10 +69,20 @@ libft:
 	@echo "Creating $@"
 	@make -C lib
 
-test:
-	@echo "Testing ${NAME}"
-	@sleep 1
-	@./${NAME} ${NUMBERS}
+TESTDIR = $(wildcard ./test/*.txt)
+
+test: $(TESTDIR)
+	@echo "${NAME} tested"
+
+# @echo "Testing ${NAME}"
+# sleep 1
+# -./${NAME} $^
+#./${NAME} ${NUMBERS}
+
+$(TESTDIR): exec
+	-./${NAME} $@
+
+exec:
 
 testleaks:
 	@echo "Testing Leaks in ${NAME}"
