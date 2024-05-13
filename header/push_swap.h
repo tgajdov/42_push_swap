@@ -46,6 +46,7 @@ void			free_errors(t_stack_node **a, int n);
 void			stack_init(t_stack_node **a, char **av);
 
 /* -------◊	Nodes initiation	◊------- */
+void	init_nodes_a(t_stack_node *a, t_stack_node *b);
 
 /* -------◊	Stack utils			◊------- */
 t_stack_node	*find_last_node(t_stack_node *stack);

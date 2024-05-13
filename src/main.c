@@ -43,7 +43,7 @@ int	main(int ac, char **av)
 			av[1] = get_next_line(fd);
 		}
 		av = ft_split(av[1], ' ');
-		stack_init(&a, av);
+		stack_init(&a, av); //tester les leaks si av est creer par ft_split
 		ft_free_array(av);
 	}
 	else

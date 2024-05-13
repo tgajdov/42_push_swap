@@ -17,7 +17,7 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	int	len_a;
 
 	len_a = lstsize(*a);
-	/* if (len_a-- > 3 && !stack_sorted(*a))
+	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(b, a, false);
 	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(b, a, false);
@@ -33,6 +33,5 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 		move_b_to_a(a, b);
 	}
 	current_index(*a);
-	min_on_top(a); */
-	b = NULL;
+	min_on_top(a);
 }
