@@ -69,26 +69,15 @@ libft:
 	@echo "Creating $@"
 	@make -C lib
 
-TESTDIR = $(wildcard ./test/*.txt)
-
-test: $(TESTDIR)
-	@echo "${NAME} tested"
-
-# @echo "Testing ${NAME}"
-# sleep 1
-# -./${NAME} $^
-#./${NAME} ${NUMBERS}
-
-$(TESTDIR): exec
-	-./${NAME} $@
-
-exec:
+test:
+	@echo "Testing ${NAME}"
+	sleep 1
+	./${NAME} ${NUMBERS}
 
 testleaks:
 	@echo "Testing Leaks in ${NAME}"
 	@sleep 1
 	@${LEAKS} ./${NAME} ${NUMBERS}
-#rajouter une regle ici pour hecker ces leaks
 
 clean:
 	@echo "Cleaning up ${NAME}"

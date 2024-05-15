@@ -50,7 +50,8 @@ void	pb(t_stack_node **b, t_stack_node **a, bool print)
 		ft_printf("pb\n");
 }
 
-void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,
+			char stack_name)
 {
 	while (*stack != top_node)
 	{
