@@ -12,6 +12,23 @@
 
 #include"../header/push_swap.h"
 
+void	ft_free_array(char **array)
+{
+	int	i;
+
+	if (array == NULL)
+		return ;
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	array = NULL;
+	return ;
+}
+
 int	error_syntax(char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))

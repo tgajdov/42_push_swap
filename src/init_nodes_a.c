@@ -12,26 +12,6 @@
 
 #include"../header/push_swap.h"
 
-t_stack_node	*find_min(t_stack_node *stack)
-{
-	long			smallest;
-	t_stack_node	*min_node;
-
-	if (!stack)
-		return (NULL);
-	smallest = LONG_MAX;
-	while (stack->nxt != NULL)
-	{
-		if (smallest > stack->val)
-		{
-			smallest = stack->val;
-			min_node = stack;
-		}
-		stack = stack->nxt;
-	}
-	return (min_node);
-}
-
 void	current_index(t_stack_node *stack)
 {
 	int	i;
@@ -41,7 +21,7 @@ void	current_index(t_stack_node *stack)
 	if (!stack)
 		return ;
 	median = lstsize(stack) / 2;
-	while(stack)
+	while (stack)
 	{
 		stack->ind = i;
 		if (i <= median)
@@ -80,56 +60,44 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-static void	set_target_b(t_stack_node *a, t_stack_node *b)
-{
-	t_stack_node	*current_a;
-	t_stack_node	*target_node;
-	long			best_match_index;
-
-	while (b)
-	{
-		best_match_index = LONG_MAX;
-		current_a = a;
-		while (current_a)
-		{
-			if (current_a->val > b->val && current_a->val < best_match_index)
-			{
-				best_match_index = current_a->val;
-				target_node = current_a;
-			}
-			current_a = current_a->nxt;
-		}
-		if (best_match_index == LONG_MAX)
-			b->target_node = find_min(a);
-		else
-			b->target_node = target_node;
-		b = b->nxt;
-	}
-}
-
-void	set_price(t_stack_node *a, t_stack_node *b)
+void	set_price_a(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
 	int	len_b;
 
 	len_a = lstsize(a);
 	len_b = lstsize(b);
-	while (b)
+	while (a)
 	{
-		b->push_cost = b->ind;
-		if (!b->above_med)
-			b->push_cost = len_b - b->ind;
-		if (b->target_node->above_med)
-			b->push_cost += b->target_node->ind;
+		a->push_cost = a->ind;
+		if (!a->above_med)
+			a->push_cost = len_a - a->ind;
+		if (a->target_node->above_med)
+			a->push_cost += a->target_node->ind;
 		else
-			b->push_cost += len_a - b->target_node->ind;
-		b = b->nxt;
+			a->push_cost += len_b - a->target_node->ind;
+		a = a->nxt;
 	}
 }
 
 void	set_cheapest(t_stack_node *stack)
 {
-	
+	long			cheapest_val;
+	t_stack_node	*cheapest_node;
+
+	if (!stack)
+		return ;
+	cheapest_val = LONG_MAX;
+	while (stack)
+	{
+		if (stack->push_cost < cheapest_val)
+		{
+			cheapest_val = stack->push_cost;
+			cheapest_node = stack;
+		}
+		stack = stack->nxt;
+	}
+	cheapest_node->cheapest = true;
 }
 
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
@@ -137,7 +105,7 @@ void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 	current_index(a);
 	current_index(b);
 	set_target_a(a, b);
-	cost_price(a, b);
+	set_price_a(a, b);
 	set_cheapest(a);
 	return ;
 }

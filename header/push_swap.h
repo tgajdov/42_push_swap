@@ -41,17 +41,19 @@ int				error_duplicate(t_stack_node *a, int n);
 void			free_stack(t_stack_node **stack);
 void			free_errors(t_stack_node **a, int n);
 
-
 /* -------◊	Stack initiation	◊------- */
 void			stack_init(t_stack_node **a, char **av);
 
 /* -------◊	Nodes initiation	◊------- */
-void	init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
 
 /* -------◊	Stack utils			◊------- */
 t_stack_node	*find_last_node(t_stack_node *stack);
 t_stack_node	*find_max(t_stack_node *stack);
+t_stack_node	*find_min(t_stack_node *stack);
 int				lstsize(t_stack_node *lst);
+void			current_index(t_stack_node *stack);
 
 /* -------◊	Commands			◊------- */
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
@@ -62,9 +64,13 @@ void			ss(t_stack_node **a, t_stack_node **b, bool print);
 void			ra(t_stack_node **a, bool print);
 void			rb(t_stack_node **b, bool print);
 void			rr(t_stack_node **a, t_stack_node **b, bool print);
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
 void			rra(t_stack_node **a, bool print);
 void			rrb(t_stack_node **b, bool print);
 void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
 
 /* -------◊	Algo				◊------- */
 bool			stack_sorted(t_stack_node *stack);
@@ -74,6 +80,5 @@ void			sort_stack(t_stack_node **a, t_stack_node **b);
 /* -------◊	Rests				◊------- */
 void			ft_print_list(t_stack_node *head);
 void			ft_free_array(char **array);
-
 
 #endif

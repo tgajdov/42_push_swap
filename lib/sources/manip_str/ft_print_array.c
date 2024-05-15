@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_array.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgajdov <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/15 14:42:25 by tgajdov           #+#    #+#             */
+/*   Updated: 2024/05/15 14:42:26 by tgajdov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../../includes/libft.h"
 
 void	ft_print_array(char **array)
@@ -5,6 +17,6 @@ void	ft_print_array(char **array)
 	int	i;
 
 	i = 0;
-	while(array[i])
+	while (array[i])
 		ft_printf("%s\n", array[i++]);
 }
