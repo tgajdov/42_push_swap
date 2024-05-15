@@ -31,11 +31,11 @@ SRCS = $(wildcard ${SRC_DIR}/*.c)
 OBJS = $(SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o)
 
 #20 items entre -10000 et 10000
-#NUMBERS = 419 3170 -1160 2194 -9171 7004 948 3891 3055 -9553 1219 6914 9136 -6324 -5584 -995 1567 7483 -6852 -5815
+NUMBERS = 419 3170 -1160 2194 -9171 7004 948 3891 3055 -9553 1219 6914 9136 -6324 -5584 -995 1567 7483 -6852 -5815
 #20 items entre -10000 et 10000, dans l'ordre
 #NUMBERS = -9601 -7856 -7172 -6735 -6382 -6128 -5734 -5135 -4193 -3117 -1534 -987 -597 4068 5512 5576 6608 7786 9253 9717
 #10 items entre -10 et 10
-NUMBERS = -6 5 -7 1 0 7 -4 3 -2 6
+#NUMBERS = -6 5 -7 1 0 7 -4 3 -2 6
 #10 items entre -10 et 10, dans l'ordre
 #NUMBERS = -10 -6 -5 -3 1 3 4 5 8 9
 #1000 items entre -10000 et 10000
@@ -71,8 +71,8 @@ libft:
 
 test:
 	@echo "Testing ${NAME}"
-	sleep 1
-	./${NAME} ${NUMBERS}
+	@sleep 1
+	@./${NAME} ${NUMBERS} | ./checker_Mac ${NUMBERS}
 
 testleaks:
 	@echo "Testing Leaks in ${NAME}"
