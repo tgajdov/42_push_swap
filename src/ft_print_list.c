@@ -21,8 +21,9 @@ void	ft_print_list(t_stack_node *head)
 	current = head;
 	while (current != NULL)
 	{
-		ft_printf("Value of node[%d]is :%d\n", i, current->val);
+		ft_printf("Value of node[%d]is :%d\n", current->val, current->cheapest);
 		current = current->nxt;
 		i++;
 	}
+	ft_printf("\n");
 }

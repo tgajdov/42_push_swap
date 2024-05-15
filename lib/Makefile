@@ -78,10 +78,11 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 all: $(NAME)
-	@echo "$(GREEN) The Makefile of [LIBFT] has been compiled!$(DEF_COLOR)"
 
 $(NAME):$(OFILES)
+	@echo "Creating $@"
 	@$(AR) $@ $^
+	@echo "$(GREEN) The Makefile of ${NAME} has been compiled!$(DEF_COLOR)"
 	
 %.o: %.c
 	@$(CC) $(CCFLAGS) -o $@ -c $^

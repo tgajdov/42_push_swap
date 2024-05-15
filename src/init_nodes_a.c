@@ -90,6 +90,7 @@ void	set_cheapest(t_stack_node *stack)
 	cheapest_val = LONG_MAX;
 	while (stack)
 	{
+		//stack->cheapest = false; // j'ai ajouté ca ici car le cheapest n'est pas reinitialiser a chaque passage avant d'etre redefini;
 		if (stack->push_cost < cheapest_val)
 		{
 			cheapest_val = stack->push_cost;

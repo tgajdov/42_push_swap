@@ -12,11 +12,14 @@
 
 #include"../header/push_swap.h"
 
+// static	int		i = 0;
+//printf("Passage :%d\nMy NODE[%d]\nHis value :%d\nHis push_cost:%d\nHe's above the median :%d\nHe's the cheapest :%d\n\n", i, cheapest_node->ind, cheapest_node->val, cheapest_node->push_cost, cheapest_node->above_med, cheapest_node->cheapest);
+
 static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest_node;
 
-	cheapest_node = get_cheapest(*a);
+	cheapest_node = get_cheapest(*a);// c'est ici quejai un probleme a analzser je ne comprend pas pq
 	if (cheapest_node->above_med && cheapest_node->target_node->above_med)
 		rotate_both(a, b, cheapest_node);
 	else if (!cheapest_node->above_med
@@ -38,9 +41,16 @@ static void	min_on_top(t_stack_node **a)
 	while ((*a)->val != find_min(*a)->val)
 	{
 		if (find_min(*a)->above_med)
+		{
+			ft_print_list(*a);
 			ra(a, false);
+			printf("ca printf ici\n");
+		}
 		else
+		{
 			rra(a, false);
+			printf("ca printf la\n");
+		}
 	}
 }
 
@@ -79,4 +89,7 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	}
 	current_index(*a);
 	min_on_top(a);
+	ft_print_list(*a);
 }
+
+/* Probleme a partir de  10 imputs, je pense qu'il set trop de cheapest mais je suis pas sur */
