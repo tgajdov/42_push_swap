@@ -54,6 +54,7 @@ t_stack_node	*find_max(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node *stack);
 int				lstsize(t_stack_node *lst);
 void			current_index(t_stack_node *stack);
+t_stack_node	*get_cheapest(t_stack_node *stack);
 
 /* -------◊	Commands			◊------- */
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
@@ -69,13 +70,15 @@ void			rotate_both(t_stack_node **a, t_stack_node **b,
 void			rra(t_stack_node **a, bool print);
 void			rrb(t_stack_node **b, bool print);
 void			rrr(t_stack_node **a, t_stack_node **b, bool print);
-void			rotate_both(t_stack_node **a, t_stack_node **b,
+void			rev_rotate_both(t_stack_node **a, t_stack_node **b,
 					t_stack_node *cheapest_node);
 
 /* -------◊	Algo				◊------- */
 bool			stack_sorted(t_stack_node *stack);
 void			sort_three(t_stack_node **a);
 void			sort_stack(t_stack_node **a, t_stack_node **b);
+void			prep_for_push(t_stack_node **stack, t_stack_node *top_node,
+					char stack_name);
 
 /* -------◊	Rests				◊------- */
 void			ft_print_list(t_stack_node *head);

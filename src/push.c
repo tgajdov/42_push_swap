@@ -49,3 +49,24 @@ void	pb(t_stack_node **b, t_stack_node **a, bool print)
 	if (!print)
 		ft_printf("pb\n");
 }
+
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+{
+	while (*stack != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_med)
+				ra(stack, false);
+			else
+				rra(stack, false);
+		}
+		if (stack_name == 'b')
+		{
+			if (top_node->above_med)
+				rb(stack, false);
+			else
+				rrb(stack, false);
+		}
+	}
+}
