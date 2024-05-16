@@ -29,7 +29,7 @@ t_stack_node	*find_min(t_stack_node *stack)
 	if (!stack)
 		return (NULL);
 	smallest = LONG_MAX;
-	while (stack->nxt != NULL)
+	while (stack)
 	{
 		if (smallest > stack->val)
 		{

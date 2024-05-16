@@ -38,19 +38,17 @@ static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 
 static void	min_on_top(t_stack_node **a)
 {
-	while ((*a)->val != find_min(*a)->val)
+	while ((*a)->val != (find_min(*a))->val)
 	{
-		if (find_min(*a)->above_med)
+		if ((find_min(*a))->above_med)
 		{
-			ft_print_list(*a);
 			ra(a, false);
-			printf("ca printf ici\n");
 		}
 		else
 		{
 			rra(a, false);
-			printf("ca printf la\n");
 		}
+		ft_print_node(find_min(*a));
 	}
 }
 
@@ -89,7 +87,6 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	}
 	current_index(*a);
 	min_on_top(a);
-	ft_print_list(*a);
 }
 
 /* Probleme a partir de  10 imputs, je pense qu'il set trop de cheapest mais je suis pas sur */

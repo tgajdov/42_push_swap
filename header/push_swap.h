@@ -81,7 +81,8 @@ void			prep_for_push(t_stack_node **stack, t_stack_node *top_node,
 					char stack_name);
 
 /* -------◊	Rests				◊------- */
-void			ft_print_list(t_stack_node *head);
+void			ft_print_list(t_stack_node *head, char *name);
+void			ft_print_node(t_stack_node *head);
 void			ft_free_array(char **array);
 
 #endif

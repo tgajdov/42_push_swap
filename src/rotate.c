@@ -28,6 +28,7 @@ static void	rotate(t_stack_node **stack)
 
 void	ra(t_stack_node **a, bool print)
 {
+	ft_printf("Fonction ra\n");
 	rotate(a);
 	if (!print)
 		ft_printf("ra\n");
@@ -35,6 +36,7 @@ void	ra(t_stack_node **a, bool print)
 
 void	rb(t_stack_node **b, bool print)
 {
+	ft_printf("Fonction rb\n");
 	rotate(b);
 	if (!print)
 		ft_printf("rb\n");
@@ -42,6 +44,7 @@ void	rb(t_stack_node **b, bool print)
 
 void	rr(t_stack_node **a, t_stack_node **b, bool print)
 {
+	ft_printf("Fonction rr\n");
 	rotate(a);
 	rotate(b);
 	if (!print)
