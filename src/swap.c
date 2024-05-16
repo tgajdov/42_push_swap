@@ -28,7 +28,6 @@ static void	swap(t_stack_node **head)
 
 void	sa(t_stack_node	**a, bool print)
 {
-	ft_printf("Fonction sa\n");
 	swap(a);
 	if (!print)
 		ft_printf("sa\n");
@@ -36,7 +35,6 @@ void	sa(t_stack_node	**a, bool print)
 
 void	sb(t_stack_node **b, bool print)
 {
-	ft_printf("Fonction sb\n");
 	swap(b);
 	if (!print)
 		ft_printf("sb\n");
@@ -44,7 +42,6 @@ void	sb(t_stack_node **b, bool print)
 
 void	ss(t_stack_node **a, t_stack_node **b, bool print)
 {
-	ft_printf("Fonction ss\n");
 	swap(a);
 	swap(b);
 	if (!print)

@@ -38,7 +38,6 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 
 void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
-	ft_printf("Fonction pa\n");
 	push(a, b);
 	if (!print)
 		ft_printf("pa\n");
@@ -46,7 +45,6 @@ void	pa(t_stack_node **a, t_stack_node **b, bool print)
 
 void	pb(t_stack_node **b, t_stack_node **a, bool print)
 {
-	ft_printf("Fonction pb\n");
 	push(b, a);
 	if (!print)
 		ft_printf("pb\n");
