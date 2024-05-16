@@ -15,17 +15,14 @@
 void	ft_print_list(t_stack_node *head, char *name)
 {
 	t_stack_node	*current;
-	int				i;
-
-	i = 0;
+	
 	current = head;
 	ft_printf("The stack : %s\n", name);
-	while (current != NULL)
+	while (current)
 	{
 		ft_print_node(current);
 		//ft_printf("Index of node[%d]is :%d\n", current->val, current->ind);
 		current = current->nxt;
-		i++;
 	}
 	ft_printf("\n");
 }
