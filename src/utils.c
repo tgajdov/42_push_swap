@@ -49,7 +49,7 @@ t_stack_node	*find_max(t_stack_node *stack)
 	if (!stack)
 		return (NULL);
 	biggest = LONG_MIN;
-	while (stack->nxt != NULL)
+	while (stack)
 	{
 		if (biggest < stack->val)
 		{

@@ -79,7 +79,7 @@ void	free_errors(t_stack_node **a, int n)
 {
 	free_stack(a);
 	if (n)
-	ft_printf("Error\n");
+		ft_printf("Error");
 	// if (n == 10)
 	// 	ft_printf("Error, at least one arg is not a number!\n");
 	// else if (n == 11)
