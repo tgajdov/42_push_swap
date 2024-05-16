@@ -70,12 +70,13 @@ void	set_price_a(t_stack_node *a, t_stack_node *b)
 	while (a)
 	{
 		a->push_cost = a->ind;
-		if (!a->above_med)
-			a->push_cost = len_a - a->ind;
+		if (!(a->above_med))
+			a->push_cost = len_a - (a->ind);
 		if (a->target_node->above_med)
 			a->push_cost += a->target_node->ind;
 		else
-			a->push_cost += len_b - a->target_node->ind;
+			a->push_cost += len_b - (a->target_node->ind);
+		//ft_print_node(a);
 		a = a->nxt;
 	}
 }
@@ -98,6 +99,8 @@ void	set_cheapest(t_stack_node *stack)
 		}
 		stack = stack->nxt;
 	}
+	// ft_printf("MY CHEAPEST NODE IS :");
+	// ft_print_node(cheapest_node);
 	cheapest_node->cheapest = true;
 }
 

@@ -17,10 +17,12 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*cheapest_node;
 
 	cheapest_node = get_cheapest(*a);
+	//ft_printf("MY CHEAPEST NODE ISN'T :");
+	//ft_print_node(cheapest_node);
 	if (cheapest_node->above_med && cheapest_node->target_node->above_med)
 		rotate_both(a, b, cheapest_node);
-	else if (!cheapest_node->above_med
-		&& !cheapest_node->target_node->above_med)
+	else if (!(cheapest_node->above_med)
+		&& !(cheapest_node->target_node->above_med))
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');

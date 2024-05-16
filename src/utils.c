@@ -16,7 +16,7 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 {
 	if (!stack)
 		return (NULL);
-	while (stack->cheapest == true)
+	while (stack->cheapest != true)
 		stack = stack->nxt;
 	return (stack);
 }
